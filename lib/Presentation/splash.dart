@@ -14,7 +14,7 @@ class _SplashState extends State<Splash> {
   @override
   void initState(){
     super.initState();
-    Future.delayed(Duration(seconds: 3),(){
+    Future.delayed(Duration(seconds: 6),(){
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=>NavBar()));
     });
   }
