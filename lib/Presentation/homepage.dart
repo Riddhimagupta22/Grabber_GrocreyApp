@@ -188,7 +188,8 @@ class _HomeState extends State<Home> {
                                   child: CircleAvatar(
                                     backgroundColor: Colors.white,
                                     radius: 14,
-                                    child: Icon(Icons.add_rounded, color: Colors.black, size: 25),
+                                    child: IconButton(onPressed:(){},icon: Icon(Icons.add_rounded, color: Colors.black, size: 25,),padding: EdgeInsets.zero,
+                                      constraints: BoxConstraints(),),
                                   ),
                                 ),
                               ],
