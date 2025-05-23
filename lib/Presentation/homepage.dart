@@ -16,9 +16,13 @@ class _HomeState extends State<Home> {
     final screenHeight = MediaQuery.of(context).size.height;
 
     return  Scaffold( body:
-      Padding(
-        padding:  EdgeInsets.symmetric(vertical: screenWidth*.09),
-        child: Address(),
+      Column(
+        children: [
+          Padding(
+            padding:  EdgeInsets.symmetric(vertical: screenWidth*.09),
+            child: Address(),
+          ),
+        ],
       ),
     );
   }
