@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../Widgets/address.dart';
+
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -10,6 +12,14 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
+    return  Scaffold( body:
+      Padding(
+        padding:  EdgeInsets.symmetric(vertical: screenWidth*.09),
+        child: Address(),
+      ),
+    );
   }
 }

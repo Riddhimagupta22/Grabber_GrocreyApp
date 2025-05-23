@@ -20,7 +20,6 @@ class _NavBarState extends State<NavBar> {
     @override
     Widget build(BuildContext context) {
       final screenWidth = MediaQuery.of(context).size.width;
-      final screenHeight = MediaQuery.of(context).size.height;
 
       final iconsize = screenWidth * .065;
       final navbarheigth = screenWidth * .23;
