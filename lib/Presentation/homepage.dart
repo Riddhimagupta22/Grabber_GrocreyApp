@@ -13,34 +13,34 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   final List<Map<String, dynamic>> categories = [
-    {'image': 'Assets/Image/image_38-removebg-preview.png', 'label': 'Fruits'},
+    {'image': GImage.Fruits, 'label': 'Fruits'},
     {
-      'image': 'Assets/Image/image_39-removebg-preview.png',
+      'image': GImage.Milkegg,
       'label': 'Milk & egg'
     },
-    {'image': 'Assets/Image/image 37.png', 'label': 'Beverages'},
-    {'image': 'Assets/Image/image_41-removebg-preview.png', 'label': 'Laundry'},
+    {'image': GImage.Beverages, 'label': 'Beverages'},
+    {'image': GImage.Laundry, 'label': 'Laundry'},
     {
-      'image': 'Assets/Image/image_36-removebg-preview.png',
+      'image': GImage.Vegetables,
       'label': 'Vegetables'
     },
   ];
 
   final List<Map<String, dynamic>> Fruits = [
     {
-      'image': 'Assets/Image/image_44-removebg-preview.png',
+      'image': GImage.Banana,
       'name': 'Banana',
       'rating': 4.8,
       'price': 3.99
     },
     {
-      'image': 'Assets/Image/image_44-removebg-preview.png',
+      'image': GImage.Apple,
       'name': 'Apple',
       'rating': 4.7,
       'price': 2.99
     },
     {
-      'image': 'Assets/Image/image_44-removebg-preview.png',
+      'image': GImage.Orange,
       'name': 'Orange',
       'rating': 4.6,
       'price': 3.95
@@ -50,19 +50,19 @@ class _HomeState extends State<Home> {
    final List<Map<String, dynamic>> Banner = [
 
      {
-       'color': Gcolour.Banner1,
+       'color': Gcolour.lightgreen,
        'title': 'Up to 30% offer',
        'subtitle': 'Enjoy our big offer',
        'image': GImage.Banner1,
        'textbutton':'Shop Now',
      }, {
-       'color':Gcolour.Banner2,
+       'color':Gcolour.red,
        'title':'Up to 25% offer',
        'subtitle': 'On first buyers',
        'image':GImage.Banner2,
        'textbutton':'Shop Now',
      } ,{
-       'color':Gcolour.Banner3,
+       'color':Gcolour.yellow,
        'title': 'Get Same day\nDeliver',
        'subtitle': 'On orders above \$20',
        'image':GImage.Banner3,
@@ -152,7 +152,7 @@ class _HomeState extends State<Home> {
                       child: Column(
                         children: [
                           CircleAvatar(
-                            backgroundColor: Color(0xFFF6F6F6),
+                            backgroundColor: Gcolour.lightgrey,
                             radius: 32,
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
@@ -204,7 +204,7 @@ class _HomeState extends State<Home> {
                         fontWeight: FontWeight.w600,
                         fontSize: 14,
                         letterSpacing: 0.0,
-                        color: Color(0xFF0CA201),
+                        color: Gcolour.green,
                       ),
                     ),
                   )
@@ -243,7 +243,7 @@ class _HomeState extends State<Home> {
                                     borderRadius: BorderRadius.circular(16),
                                     child: Container(
 
-                                      color: Color(0xFFF6F6F6),
+                                      color: Gcolour.lightgrey,
                                       child: Image.asset(
                                         item['image'],
                                         height: screenHeight * 0.17,
