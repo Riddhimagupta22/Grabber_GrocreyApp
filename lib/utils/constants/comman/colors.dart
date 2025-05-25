@@ -14,6 +14,13 @@ class Gcolour{
   static const Color black = Colors.black ;
   static const Color white = Colors.white ;
 
+  // profileDark
+  static const Color iconcolor = Color(0xFFADABB7) ;
+  static const Color cbg = Color(0xFF2E2D35) ;
+  //ProfileLight
+  static const Color CBG = Color(0xFFF1F2F6) ;
+  static const Color iconcolor2 = Color(0xFFB4B4BA) ;
+
 
 
 }

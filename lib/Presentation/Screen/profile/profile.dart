@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grabber/Presentation/Screen/profile/Widgets2/gcircularImage.dart';
+import 'package:grabber/Presentation/Screen/profile/Widgets2/profile_menu.dart';
 import 'package:grabber/Presentation/Screen/profile/Widgets2/sectionheading.dart';
 import 'package:grabber/appbar.dart';
 import 'package:grabber/utils/constants/comman/image.dart';
@@ -42,15 +43,26 @@ class Profile extends StatelessWidget {
               Divider(),
               SizedBox(height: GSizes.spaceBtw),
               GSectionHeading(
-                  showActionButton: false, title: 'Personal Information'),
+                  showActionButton: false, title: 'YOUR INFORMATION'),
               SizedBox(height: GSizes.spaceBtw),
 
-              Row(
-                children: [
-                  Text('Name',style: Theme.of(context).textTheme.bodySmall,overflow: TextOverflow.ellipsis,),
-                  Text('Coding',style: Theme.of(context).textTheme.bodyMedium,overflow: TextOverflow.ellipsis,),
-                ],
-              )
+              GProfileMenu(title: 'Your orders', onPressed: (){}, icon: Icons.delivery_dining),
+              GProfileMenu(title: 'Bookmarked recipes', onPressed: (){}, icon: Icons.fastfood_sharp),
+              GProfileMenu(title: 'Address book', onPressed: (){}, icon: Icons.book_sharp),
+              GProfileMenu(title: 'GST details', onPressed: (){}, icon: Icons.text_snippet_outlined),
+              GProfileMenu(title: 'E-Gift Cards', onPressed: (){}, icon: Icons.card_giftcard),
+
+              SizedBox(height: GSizes.spaceBtw),
+              GSectionHeading(
+                  showActionButton: false, title: 'PAYMENTS AND COUPONS'),
+              SizedBox(height: GSizes.spaceBtw),
+
+              GProfileMenu(title: 'Wallet', onPressed: (){}, icon: Icons.account_balance_wallet_outlined),
+              GProfileMenu(title: 'Grabber Money', onPressed: (){}, icon: Icons.account_balance_wallet_outlined),
+              GProfileMenu(title: 'Payment Settings', onPressed: (){}, icon: Icons.payment_outlined),
+              GProfileMenu(title: 'GST details', onPressed: (){}, icon: Icons.text_snippet_outlined),
+              GProfileMenu(title: 'E-Gift Cards', onPressed: (){}, icon: Icons.card_giftcard),
+
             ],
           ),
         ),
