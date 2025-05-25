@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:grabber/utils/constants/colors.dart';
-import 'package:grabber/utils/constants/sizes.dart';
+import '../Coman/Widgets/bannerCard.dart';
+import '../utils/constants/comman/colors.dart';
+import '../utils/constants/comman/image.dart';
 
-import '../utils/constants/bannerCard.dart';
-import '../utils/constants/image.dart';
+
 
 class Home extends StatefulWidget {
   @override
@@ -82,24 +82,40 @@ class _HomeState extends State<Home> {
 
     return Scaffold(
       appBar: AppBar(
+        // title: ListTile(
+        //   leading: Icon(Icons.bike_scooter),
+        //   title: Text(
+        //     "61 Hopper street..",
+        //     style: GoogleFonts.inter(
+        //       fontWeight: FontWeight.w500,
+        //       fontSize: fontsize,
+        //       height: 1,
+        //     ),
+        //   ),
+        //   trailing: Icon(
+        //     Icons.shopping_basket_outlined,
+        //     size: iconsize,
+        //   ),
+        // )
+          leading: Icon(Icons.bike_scooter),
 
-          backgroundColor: Colors.white,
-          elevation: 0,
-          title: ListTile(
-            leading: Icon(Icons.bike_scooter),
-            title: Text(
-              "61 Hopper street..",
-              style: GoogleFonts.inter(
-                fontWeight: FontWeight.w500,
-                fontSize: fontsize,
-                height: 1,
-              ),
-            ),
-            trailing: Icon(
-              Icons.shopping_basket_outlined,
-              size: iconsize,
-            ),
-          )),
+          title:Text(
+        "61 Hopper street..",
+        // style: GoogleFonts.inter(
+        //   fontWeight: FontWeight.w500,
+        //   fontSize: fontsize,
+        //   height: 1,
+        // ),
+
+        ),
+      actions: [Padding(
+        padding: const EdgeInsets.only(right: 28.0),
+        child: Icon(
+            Icons.shopping_basket_outlined,
+            // size: iconsize,
+          ),
+      ),],
+        ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

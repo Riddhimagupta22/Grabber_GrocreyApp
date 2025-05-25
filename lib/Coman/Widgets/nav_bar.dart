@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../Presentation/favourite.dart';
-import '../Presentation/homepage.dart';
-import '../Presentation/menu.dart';
-import '../Presentation/profile.dart';
-import '../Presentation/search.dart';
+import '../../Presentation/favourite.dart';
+import '../../Presentation/homepage.dart';
+import '../../Presentation/menu.dart';
+import '../../Presentation/Screen/profile/profile.dart';
+import '../../Presentation/search.dart';
 
 class NavBar extends StatefulWidget {
   const NavBar({super.key});
@@ -45,7 +45,7 @@ class _NavBarState extends State<NavBar> {
         bottomNavigationBar: Container(
           height:  navbarheigth,
           decoration: BoxDecoration(
-            color: Colors.white,
+            // color: Colors.white,
             border: Border(
               top: BorderSide(
                 color: Color(0xFFF0EFEF),width: 1

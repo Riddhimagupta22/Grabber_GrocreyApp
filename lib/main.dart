@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grabber/Presentation/splash.dart';
+import 'package:grabber/utils/theme/themes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,11 +15,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        scaffoldBackgroundColor: Color(0xFFFFFFFF),
-        colorScheme: ColorScheme.fromSeed(seedColor: Color(0XFF0CA201)),
-        useMaterial3: true,
-      ),
+      themeMode: ThemeMode.system,
+
+      theme: GAppTheme.lightTheme,
+      darkTheme: GAppTheme.darkTheme,
       home: Splash()
     );
   }

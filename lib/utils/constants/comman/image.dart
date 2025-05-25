@@ -1,5 +1,7 @@
 class GImage{
 
+  GImage._();
+
   static const String Banner1 = "Assets/Image/image_3-removebg-preview.png";
   static const String Banner2 = "Assets/Image/image_4-removebg-preview.png";
   static const String Banner3 = "Assets/Image/image_5-removebg-preview.png";
@@ -16,5 +18,11 @@ class GImage{
   static const String Banana = "Assets/Image/image_44-removebg-preview.png";
   static const String Apple = "Assets/Image/image_44-removebg-preview.png";
   static const String Orange = "Assets/Image/image_44-removebg-preview.png";
+
+  // profile
+
+  static const String Profile = "Assets/Image/Profile/hand-drawn-ethnic-beauty-illustration.png";
+
+
 
 }

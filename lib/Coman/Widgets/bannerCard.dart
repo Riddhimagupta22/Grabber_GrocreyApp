@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:grabber/utils/constants/sizes.dart';
+import 'package:grabber/utils/constants/comman/sizes.dart';
 
 class Bannercard extends StatelessWidget {
   final Color color;
