@@ -17,5 +17,3 @@ Secure Payments – Multiple payment options including credit card, mobile walle
 
 Favorites & History – Quickly reorder your most-used items.
 
-Offers & Coupons – Avail discounts and apply coupons at checkout.
-
