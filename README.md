@@ -1,9 +1,9 @@
-##Grabber – Grocery Delivery App
+# Grabber – Grocery Delivery App
 
 Grabber is a user-friendly grocery delivery app designed to help users quickly browse, shop, and receive groceries right at their doorstep. Whether you're planning your weekly shopping or need last-minute ingredients, Grabber brings the grocery store to you.
 
 
-#Features
+# Features
 
 Browse and Search – Easily browse categories or search for specific items.
 
