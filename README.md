@@ -1,16 +1,21 @@
-# grabber
+##Grabber – Grocery Delivery App
 
-A new Flutter project.
+Grabber is a user-friendly grocery delivery app designed to help users quickly browse, shop, and receive groceries right at their doorstep. Whether you're planning your weekly shopping or need last-minute ingredients, Grabber brings the grocery store to you.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+#Features
 
-A few resources to get you started if this is your first Flutter project:
+Browse and Search – Easily browse categories or search for specific items.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Smart Cart – Add, remove, or update quantities of products in a dynamic cart.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Scheduled Deliveries – Choose your preferred delivery time slot.
+
+Real-Time Tracking – Track your order from store to door.
+
+Secure Payments – Multiple payment options including credit card, mobile wallets, and cash on delivery.
+
+Favorites & History – Quickly reorder your most-used items.
+
+Offers & Coupons – Avail discounts and apply coupons at checkout.
+
