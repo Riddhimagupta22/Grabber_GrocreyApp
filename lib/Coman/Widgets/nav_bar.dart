@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:grabber/utils/Helpers/helper.dart';
 import '../../Presentation/favourite.dart';
 import '../../Presentation/homepage.dart';
 import '../../Presentation/menu.dart';
@@ -15,6 +15,7 @@ class NavBar extends StatefulWidget {
 }
 
 class _NavBarState extends State<NavBar> {
+
     final PageController _pageViewController = PageController();
     int _selectedIndex = 0;
     @override
@@ -45,7 +46,7 @@ class _NavBarState extends State<NavBar> {
         bottomNavigationBar: Container(
           height:  navbarheigth,
           decoration: BoxDecoration(
-            // color: Colors.white,
+
             border: Border(
               top: BorderSide(
                 color: Color(0xFFF0EFEF),width: 1

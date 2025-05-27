@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:grabber/Presentation/Cart/cart.dart';
+import 'package:grabber/utils/Helpers/helper.dart';
 import '../Coman/Widgets/bannerCard.dart';
 import '../utils/constants/comman/colors.dart';
 import '../utils/constants/comman/image.dart';
-
-
 
 class Home extends StatefulWidget {
   @override
@@ -14,64 +14,45 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   final List<Map<String, dynamic>> categories = [
     {'image': GImage.Fruits, 'label': 'Fruits'},
-    {
-      'image': GImage.Milkegg,
-      'label': 'Milk & egg'
-    },
+    {'image': GImage.Milkegg, 'label': 'Milk & egg'},
     {'image': GImage.Beverages, 'label': 'Beverages'},
     {'image': GImage.Laundry, 'label': 'Laundry'},
-    {
-      'image': GImage.Vegetables,
-      'label': 'Vegetables'
-    },
+    {'image': GImage.Vegetables, 'label': 'Vegetables'},
   ];
 
   final List<Map<String, dynamic>> Fruits = [
+    {'image': GImage.Banana, 'name': 'Banana', 'rating': 4.8, 'price': 3.99},
+    {'image': GImage.Apple, 'name': 'Apple', 'rating': 4.7, 'price': 2.99},
+    {'image': GImage.Orange, 'name': 'Orange', 'rating': 4.6, 'price': 3.95},
+  ];
+
+  // promo
+  final List<Map<String, dynamic>> Banner = [
     {
-      'image': GImage.Banana,
-      'name': 'Banana',
-      'rating': 4.8,
-      'price': 3.99
+      'color': Gcolour.lightgreen,
+      'title': 'Up to 30% offer',
+      'subtitle': 'Enjoy our big offer',
+      'image': GImage.Banner1,
+      'textbutton': 'Shop Now',
     },
     {
-      'image': GImage.Apple,
-      'name': 'Apple',
-      'rating': 4.7,
-      'price': 2.99
+      'color': Gcolour.red,
+      'title': 'Up to 25% offer',
+      'subtitle': 'On first buyers',
+      'image': GImage.Banner2,
+      'textbutton': 'Shop Now',
     },
     {
-      'image': GImage.Orange,
-      'name': 'Orange',
-      'rating': 4.6,
-      'price': 3.95
-    },];
+      'color': Gcolour.yellow,
+      'title': 'Get Same day\nDeliver',
+      'subtitle': 'On orders above \$20',
+      'image': GImage.Banner3,
+      'textbutton': 'Shop Now',
+    }
+  ];
 
-    // promo
-   final List<Map<String, dynamic>> Banner = [
-
-     {
-       'color': Gcolour.lightgreen,
-       'title': 'Up to 30% offer',
-       'subtitle': 'Enjoy our big offer',
-       'image': GImage.Banner1,
-       'textbutton':'Shop Now',
-     }, {
-       'color':Gcolour.red,
-       'title':'Up to 25% offer',
-       'subtitle': 'On first buyers',
-       'image':GImage.Banner2,
-       'textbutton':'Shop Now',
-     } ,{
-       'color':Gcolour.yellow,
-       'title': 'Get Same day\nDeliver',
-       'subtitle': 'On orders above \$20',
-       'image':GImage.Banner3,
-       'textbutton':'Shop Now',
-     }
-];
-
-   final PageController _bannerController = PageController();
-   int _currentBannerPage = 0;
+  final PageController _bannerController = PageController();
+  int _currentBannerPage = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -97,20 +78,22 @@ class _HomeState extends State<Home> {
         //     size: iconsize,
         //   ),
         // )
-          leading: Icon(Icons.bike_scooter),
+        leading: Icon(Icons.bike_scooter),
 
-          title:Text(
-        "61 Hopper street..",
-
+        title: Text(
+          "61 Hopper street..",
         ),
-      actions: [Padding(
-        padding: const EdgeInsets.only(right: 28.0),
-        child: Icon(
-            Icons.shopping_basket_outlined,
-            // size: iconsize,
-          ),
-      ),],
-        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 28.0),
+            child: IconButton(
+              onPressed: () => Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => CartScreen())),
+              icon: Icon(Icons.shopping_basket_outlined),
+            ),
+          )
+        ],
+      ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -233,14 +216,16 @@ class _HomeState extends State<Home> {
                     itemBuilder: (context, index) {
                       final item = Fruits[index];
                       return Padding(
-                        padding: const EdgeInsets.only(left: 16.0, right: 5,),
+                        padding: const EdgeInsets.only(
+                          left: 16.0,
+                          right: 5,
+                        ),
                         child: Container(
                           width: screenWidth * .4,
                           margin: EdgeInsets.only(right: 16),
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(16),
-
                             boxShadow: [
                               BoxShadow(color: Colors.white, blurRadius: 4)
                             ],
@@ -253,14 +238,11 @@ class _HomeState extends State<Home> {
                                   ClipRRect(
                                     borderRadius: BorderRadius.circular(16),
                                     child: Container(
-
                                       color: Gcolour.lightgrey,
                                       child: Image.asset(
                                         item['image'],
                                         height: screenHeight * 0.17,
                                         width: double.infinity,
-
-
                                       ),
                                     ),
                                   ),
@@ -270,8 +252,16 @@ class _HomeState extends State<Home> {
                                     child: CircleAvatar(
                                       backgroundColor: Colors.white,
                                       radius: 14,
-                                      child: IconButton(onPressed:(){},icon: Icon(Icons.add_rounded, color: Colors.black, size: 25,),padding: EdgeInsets.zero,
-                                        constraints: BoxConstraints(),),
+                                      child: IconButton(
+                                        onPressed: () {},
+                                        icon: Icon(
+                                          Icons.add_rounded,
+                                          color: Colors.black,
+                                          size: 25,
+                                        ),
+                                        padding: EdgeInsets.zero,
+                                        constraints: BoxConstraints(),
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -288,7 +278,8 @@ class _HomeState extends State<Home> {
                               SizedBox(height: 4),
                               Row(
                                 children: [
-                                  Icon(Icons.star, size: 16, color: Colors.orange),
+                                  Icon(Icons.star,
+                                      size: 16, color: Colors.orange),
                                   SizedBox(width: 4),
                                   Text(
                                     "${item['rating']} (287)",
@@ -313,8 +304,7 @@ class _HomeState extends State<Home> {
                           ),
                         ),
                       );
-                    }
-                ),
+                    }),
               ),
             ),
           ],

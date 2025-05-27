@@ -1,58 +1,59 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class GTextTheme {
   GTextTheme._();
 
   static TextTheme lightTextTheme = TextTheme(
-    headlineLarge: TextStyle().copyWith(
+    headlineLarge:  GoogleFonts.inter(
         fontSize: 32, fontWeight: FontWeight.bold, color: Colors.black),
-    headlineMedium: TextStyle().copyWith(
+    headlineMedium:  GoogleFonts.inter(
         fontSize: 24, fontWeight: FontWeight.w600, color: Colors.black),
-    headlineSmall: TextStyle().copyWith(
-        fontSize: 18, fontWeight: FontWeight.w600, color: Colors.black),
-    titleLarge: TextStyle().copyWith(
+    headlineSmall:  GoogleFonts.inter(
+        fontSize: 20, fontWeight: FontWeight.w500, color: Colors.black,),
+    titleLarge:  GoogleFonts.inter(
         fontSize: 16, fontWeight: FontWeight.w600, color: Colors.black),
-    titleMedium: TextStyle().copyWith(
+    titleMedium:  GoogleFonts.inter(
         fontSize: 16, fontWeight: FontWeight.w600, color: Colors.black),
-    titleSmall: TextStyle().copyWith(
+    titleSmall:  GoogleFonts.inter(
         fontSize: 16, fontWeight: FontWeight.w600, color: Colors.black),
-    bodyLarge: TextStyle().copyWith(
+    bodyLarge:  GoogleFonts.inter(
         fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black),
-    bodyMedium: TextStyle().copyWith(
-        fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black),
-    bodySmall: TextStyle().copyWith(
-        fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black),
-    labelLarge: TextStyle().copyWith(
+    bodyMedium:  GoogleFonts.inter(
+        fontSize: 16, fontWeight: FontWeight.w500, color: Colors.black),
+    bodySmall:  GoogleFonts.inter(
+        fontSize: 14, fontWeight: FontWeight.w400, color: Colors.black),
+    labelLarge:  GoogleFonts.inter(
         fontSize: 12, fontWeight: FontWeight.w600, color: Colors.black),
-    labelMedium: TextStyle().copyWith(
-        fontSize: 12, fontWeight: FontWeight.w600, color: Colors.black),
-    labelSmall: TextStyle().copyWith(
-        fontSize: 12, fontWeight: FontWeight.w600, color: Colors.black),
+    labelMedium:  GoogleFonts.inter(
+        fontSize: 12, fontWeight: FontWeight.w500, color: Colors.black),
+    labelSmall:  GoogleFonts.inter(
+        fontSize: 12, fontWeight: FontWeight.w400, color: Colors.black),
   );
   static TextTheme darkTextTheme = TextTheme(
-    headlineLarge: TextStyle().copyWith(
+    headlineLarge:  GoogleFonts.inter(
         fontSize: 32, fontWeight: FontWeight.bold, color: Colors.white),
-    headlineMedium: TextStyle().copyWith(
+    headlineMedium:  GoogleFonts.inter(
         fontSize: 24, fontWeight: FontWeight.w600, color: Colors.white),
-    headlineSmall: TextStyle().copyWith(
+    headlineSmall:  GoogleFonts.inter(
         fontSize: 18, fontWeight: FontWeight.w600, color: Colors.white),
-    titleLarge: TextStyle().copyWith(
+    titleLarge:  GoogleFonts.inter(
         fontSize: 16, fontWeight: FontWeight.w600, color: Colors.white),
-    titleMedium: TextStyle().copyWith(
+    titleMedium:  GoogleFonts.inter(
         fontSize: 16, fontWeight: FontWeight.w600, color: Colors.white),
-    titleSmall: TextStyle().copyWith(
+    titleSmall:  GoogleFonts.inter(
         fontSize: 16, fontWeight: FontWeight.w600, color: Colors.white),
-    bodyLarge: TextStyle().copyWith(
+    bodyLarge:  GoogleFonts.inter(
         fontSize: 14, fontWeight: FontWeight.w600, color: Colors.white),
-    bodyMedium: TextStyle().copyWith(
+    bodyMedium:  GoogleFonts.inter(
         fontSize: 14, fontWeight: FontWeight.w600, color: Colors.white),
-    bodySmall: TextStyle().copyWith(
+    bodySmall:  GoogleFonts.inter(
         fontSize: 14, fontWeight: FontWeight.w600, color: Colors.white),
-    labelLarge: TextStyle().copyWith(
+    labelLarge:  GoogleFonts.inter(
         fontSize: 12, fontWeight: FontWeight.w600, color: Colors.white),
-    labelMedium: TextStyle().copyWith(
+    labelMedium:  GoogleFonts.inter(
         fontSize: 12, fontWeight: FontWeight.w600, color: Colors.white),
-    labelSmall: TextStyle().copyWith(
+    labelSmall:  GoogleFonts.inter(
         fontSize: 12, fontWeight: FontWeight.w600, color: Colors.white),
   );
 }
