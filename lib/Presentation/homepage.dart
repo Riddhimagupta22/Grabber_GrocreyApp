@@ -101,11 +101,6 @@ class _HomeState extends State<Home> {
 
           title:Text(
         "61 Hopper street..",
-        // style: GoogleFonts.inter(
-        //   fontWeight: FontWeight.w500,
-        //   fontSize: fontsize,
-        //   height: 1,
-        // ),
 
         ),
       actions: [Padding(
