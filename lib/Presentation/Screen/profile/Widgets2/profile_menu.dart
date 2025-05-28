@@ -24,7 +24,7 @@ class GProfileMenu extends StatelessWidget {
     return GestureDetector(
       onTap: onPressed,
       child: Padding(
-        padding: EdgeInsets.symmetric(vertical: GSizes.spaceBtw / 1.5),
+        padding: const EdgeInsets.symmetric(vertical: GSizes.spaceBtw / 1.5),
         child: Row(
           children: [
             Expanded(
@@ -45,7 +45,7 @@ class GProfileMenu extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 25,
             ),
             Expanded(
@@ -56,7 +56,7 @@ class GProfileMenu extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
               ),
             ),
-            Expanded(child: Icon(Icons.keyboard_arrow_right_rounded, size: 29))
+            const Expanded(child: Icon(Icons.keyboard_arrow_right_rounded, size: 29))
           ],
         ),
       ),
