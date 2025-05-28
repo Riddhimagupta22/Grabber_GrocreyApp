@@ -9,9 +9,9 @@ class GSizes{
   static const double md = 24;
 
   // banner
-  static const double BannerRadius = 10;
-  static const double BannerHeight = 383;
-  static const double BannerWidth = 383;
+  static const double bannerRadius = 10;
+  static const double bannerHeight = 383;
+  static const double bannerWidth = 383;
 
   // Appbar height
   static const double appbarHeight = 56;
