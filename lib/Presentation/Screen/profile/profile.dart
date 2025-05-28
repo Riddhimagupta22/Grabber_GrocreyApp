@@ -45,24 +45,50 @@ class Profile extends StatelessWidget {
               GSectionHeading(
                   showActionButton: false, title: 'YOUR INFORMATION'),
               SizedBox(height: GSizes.spaceBtw),
-
-              GProfileMenu(title: 'Your orders', onPressed: (){}, icon: Icons.delivery_dining),
-              GProfileMenu(title: 'Bookmarked recipes', onPressed: (){}, icon: Icons.fastfood_sharp),
-              GProfileMenu(title: 'Address book', onPressed: (){}, icon: Icons.book_sharp),
-              GProfileMenu(title: 'GST details', onPressed: (){}, icon: Icons.text_snippet_outlined),
-              GProfileMenu(title: 'E-Gift Cards', onPressed: (){}, icon: Icons.card_giftcard),
-
+              GProfileMenu(
+                  title: 'Your orders',
+                  onPressed: () {},
+                  icon: Icons.delivery_dining),
+              GProfileMenu(
+                  title: 'Bookmarked recipes',
+                  onPressed: () {},
+                  icon: Icons.fastfood_sharp),
+              GProfileMenu(
+                  title: 'Address book',
+                  onPressed: () {},
+                  icon: Icons.book_sharp),
+              GProfileMenu(
+                  title: 'GST details',
+                  onPressed: () {},
+                  icon: Icons.text_snippet_outlined),
+              GProfileMenu(
+                  title: 'E-Gift Cards',
+                  onPressed: () {},
+                  icon: Icons.card_giftcard),
               SizedBox(height: GSizes.spaceBtw),
               GSectionHeading(
                   showActionButton: false, title: 'PAYMENTS AND COUPONS'),
               SizedBox(height: GSizes.spaceBtw),
-
-              GProfileMenu(title: 'Wallet', onPressed: (){}, icon: Icons.account_balance_wallet_outlined),
-              GProfileMenu(title: 'Grabber Money', onPressed: (){}, icon: Icons.account_balance_wallet_outlined),
-              GProfileMenu(title: 'Payment Settings', onPressed: (){}, icon: Icons.payment_outlined),
-              GProfileMenu(title: 'GST details', onPressed: (){}, icon: Icons.text_snippet_outlined),
-              GProfileMenu(title: 'E-Gift Cards', onPressed: (){}, icon: Icons.card_giftcard),
-
+              GProfileMenu(
+                  title: 'Wallet',
+                  onPressed: () {},
+                  icon: Icons.account_balance_wallet_outlined),
+              GProfileMenu(
+                  title: 'Grabber Money',
+                  onPressed: () {},
+                  icon: Icons.account_balance_wallet_outlined),
+              GProfileMenu(
+                  title: 'Payment Settings',
+                  onPressed: () {},
+                  icon: Icons.payment_outlined),
+              GProfileMenu(
+                  title: 'GST details',
+                  onPressed: () {},
+                  icon: Icons.text_snippet_outlined),
+              GProfileMenu(
+                  title: 'E-Gift Cards',
+                  onPressed: () {},
+                  icon: Icons.card_giftcard),
             ],
           ),
         ),

@@ -1,5 +1,4 @@
-class GSizes{
-
+class GSizes {
   GSizes._();
 
   // Padding
@@ -33,8 +32,4 @@ class GSizes{
   static const double iconSm = 16;
   static const double iconMd = 24;
   static const double iconlg = 32;
-
-
-
-
 }

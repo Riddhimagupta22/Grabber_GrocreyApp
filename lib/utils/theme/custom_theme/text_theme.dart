@@ -5,55 +5,58 @@ class GTextTheme {
   GTextTheme._();
 
   static TextTheme lightTextTheme = TextTheme(
-    headlineLarge:  GoogleFonts.inter(
+    headlineLarge: GoogleFonts.inter(
         fontSize: 32, fontWeight: FontWeight.bold, color: Colors.black),
-    headlineMedium:  GoogleFonts.inter(
+    headlineMedium: GoogleFonts.inter(
         fontSize: 24, fontWeight: FontWeight.w600, color: Colors.black),
-    headlineSmall:  GoogleFonts.inter(
-        fontSize: 20, fontWeight: FontWeight.w500, color: Colors.black,),
-    titleLarge:  GoogleFonts.inter(
+    headlineSmall: GoogleFonts.inter(
+      fontSize: 20,
+      fontWeight: FontWeight.w500,
+      color: Colors.black,
+    ),
+    titleLarge: GoogleFonts.inter(
         fontSize: 16, fontWeight: FontWeight.w600, color: Colors.black),
-    titleMedium:  GoogleFonts.inter(
+    titleMedium: GoogleFonts.inter(
         fontSize: 16, fontWeight: FontWeight.w600, color: Colors.black),
-    titleSmall:  GoogleFonts.inter(
+    titleSmall: GoogleFonts.inter(
         fontSize: 16, fontWeight: FontWeight.w600, color: Colors.black),
-    bodyLarge:  GoogleFonts.inter(
+    bodyLarge: GoogleFonts.inter(
         fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black),
-    bodyMedium:  GoogleFonts.inter(
+    bodyMedium: GoogleFonts.inter(
         fontSize: 16, fontWeight: FontWeight.w500, color: Colors.black),
-    bodySmall:  GoogleFonts.inter(
+    bodySmall: GoogleFonts.inter(
         fontSize: 14, fontWeight: FontWeight.w400, color: Colors.black),
-    labelLarge:  GoogleFonts.inter(
+    labelLarge: GoogleFonts.inter(
         fontSize: 12, fontWeight: FontWeight.w600, color: Colors.black),
-    labelMedium:  GoogleFonts.inter(
+    labelMedium: GoogleFonts.inter(
         fontSize: 12, fontWeight: FontWeight.w500, color: Colors.black),
-    labelSmall:  GoogleFonts.inter(
+    labelSmall: GoogleFonts.inter(
         fontSize: 12, fontWeight: FontWeight.w400, color: Colors.black),
   );
   static TextTheme darkTextTheme = TextTheme(
-    headlineLarge:  GoogleFonts.inter(
+    headlineLarge: GoogleFonts.inter(
         fontSize: 32, fontWeight: FontWeight.bold, color: Colors.white),
-    headlineMedium:  GoogleFonts.inter(
+    headlineMedium: GoogleFonts.inter(
         fontSize: 24, fontWeight: FontWeight.w600, color: Colors.white),
-    headlineSmall:  GoogleFonts.inter(
+    headlineSmall: GoogleFonts.inter(
         fontSize: 18, fontWeight: FontWeight.w600, color: Colors.white),
-    titleLarge:  GoogleFonts.inter(
+    titleLarge: GoogleFonts.inter(
         fontSize: 16, fontWeight: FontWeight.w600, color: Colors.white),
-    titleMedium:  GoogleFonts.inter(
+    titleMedium: GoogleFonts.inter(
         fontSize: 16, fontWeight: FontWeight.w600, color: Colors.white),
-    titleSmall:  GoogleFonts.inter(
+    titleSmall: GoogleFonts.inter(
         fontSize: 16, fontWeight: FontWeight.w600, color: Colors.white),
-    bodyLarge:  GoogleFonts.inter(
+    bodyLarge: GoogleFonts.inter(
         fontSize: 14, fontWeight: FontWeight.w600, color: Colors.white),
-    bodyMedium:  GoogleFonts.inter(
+    bodyMedium: GoogleFonts.inter(
         fontSize: 14, fontWeight: FontWeight.w600, color: Colors.white),
-    bodySmall:  GoogleFonts.inter(
+    bodySmall: GoogleFonts.inter(
         fontSize: 14, fontWeight: FontWeight.w600, color: Colors.white),
-    labelLarge:  GoogleFonts.inter(
+    labelLarge: GoogleFonts.inter(
         fontSize: 12, fontWeight: FontWeight.w600, color: Colors.white),
-    labelMedium:  GoogleFonts.inter(
+    labelMedium: GoogleFonts.inter(
         fontSize: 12, fontWeight: FontWeight.w600, color: Colors.white),
-    labelSmall:  GoogleFonts.inter(
+    labelSmall: GoogleFonts.inter(
         fontSize: 12, fontWeight: FontWeight.w600, color: Colors.white),
   );
 }

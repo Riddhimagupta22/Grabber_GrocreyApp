@@ -1,5 +1,4 @@
-class GImage{
-
+class GImage {
   GImage._();
 
   static const String Banner1 = "Assets/Image/image_3-removebg-preview.png";
@@ -21,8 +20,6 @@ class GImage{
 
   // profile
 
-  static const String Profile = "Assets/Image/Profile/hand-drawn-ethnic-beauty-illustration.png";
-
-
-
+  static const String Profile =
+      "Assets/Image/Profile/hand-drawn-ethnic-beauty-illustration.png";
 }

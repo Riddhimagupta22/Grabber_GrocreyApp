@@ -29,7 +29,11 @@ class Gcircularimage extends StatelessWidget {
       width: width,
       height: height,
       decoration: BoxDecoration(
-          color: backgroundColor?? (GHelperFunction.isDarkMode(context)? Gcolour.black: Gcolour.white), borderRadius: BorderRadius.circular(100)),
+          color: backgroundColor ??
+              (GHelperFunction.isDarkMode(context)
+                  ? Gcolour.black
+                  : Gcolour.white),
+          borderRadius: BorderRadius.circular(100)),
       child: Image(
         fit: fit,
         image: isNetworkimage
@@ -40,5 +44,3 @@ class Gcircularimage extends StatelessWidget {
     );
   }
 }
-
-

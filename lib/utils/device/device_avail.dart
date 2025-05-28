@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class GDeviceAvail{
-
+class GDeviceAvail {
   static double getScreenHeight() {
     return MediaQuery.of(Get.context!).size.height;
   }
@@ -19,7 +18,7 @@ class GDeviceAvail{
     return kBottomNavigationBarHeight;
   }
 
-  static void hideKeyboard(BuildContext context){
+  static void hideKeyboard(BuildContext context) {
     FocusScope.of(context).requestFocus(FocusNode());
   }
 }

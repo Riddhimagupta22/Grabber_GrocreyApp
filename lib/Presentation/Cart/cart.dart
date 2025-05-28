@@ -18,8 +18,10 @@ class CartScreen extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.all(GSizes.defaultspace),
           child: ListView.separated(
-              itemBuilder: (_,index) => Column(),
-              separatorBuilder: (_,__)=> const SizedBox(height: GSizes.spacebtwsections,),
+              itemBuilder: (_, index) => Column(),
+              separatorBuilder: (_, __) => const SizedBox(
+                    height: GSizes.spacebtwsections,
+                  ),
               itemCount: 4),
         ),
       ),

@@ -4,7 +4,7 @@ import 'package:grabber/Presentation/splash.dart';
 import 'package:grabber/utils/theme/themes.dart';
 import 'firebase_options.dart';
 
-void main() async{
+void main() async {
   runApp(const MyApp());
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -19,14 +19,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      themeMode: ThemeMode.system,
-
-      theme: GAppTheme.lightTheme,
-      darkTheme: GAppTheme.darkTheme,
-      home:const Splash()
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        themeMode: ThemeMode.system,
+        theme: GAppTheme.lightTheme,
+        darkTheme: GAppTheme.darkTheme,
+        home: const Splash());
   }
 }
-

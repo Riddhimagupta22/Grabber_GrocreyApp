@@ -35,27 +35,29 @@ class GHelperFunction {
             actions: [
               TextButton(
                   onPressed: () => Navigator.of(context).pop(),
-                  child: Text('Okay'))
+                  child: const Text('Okay'))
             ],
           );
         });
   }
 
-  static bool isDarkMode(BuildContext context){
+  static bool isDarkMode(BuildContext context) {
     return Theme.of(context).brightness == Brightness.dark;
   }
 
-  static Size screenSize(){
+  static Size screenSize() {
     return MediaQuery.of(Get.context!).size;
   }
-  static double screenHeigth(){
+
+  static double screenHeigth() {
     return MediaQuery.of(Get.context!).size.height;
   }
-  static double screenWidth(){
+
+  static double screenWidth() {
     return MediaQuery.of(Get.context!).size.width;
   }
 
-  static void navigateToScreen(BuildContext context,Widget screen){
+  static void navigateToScreen(BuildContext context, Widget screen) {
     Navigator.push(context, MaterialPageRoute(builder: (_) => screen));
   }
 }
