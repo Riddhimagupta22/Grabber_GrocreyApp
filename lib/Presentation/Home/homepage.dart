@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:grabber/Presentation/Cart/cart.dart';
 import 'package:grabber/utils/Helpers/helper.dart';
-import '../Coman/Widgets/bannerCard.dart';
-import '../utils/constants/comman/colors.dart';
-import '../utils/constants/comman/image.dart';
+import '../../Coman/Widgets/bannerCard.dart';
+import '../../utils/constants/comman/colors.dart';
+import '../../utils/constants/comman/image.dart';
 
 class Home extends StatefulWidget {
   @override
