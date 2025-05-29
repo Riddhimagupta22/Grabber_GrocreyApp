@@ -17,4 +17,9 @@ class UserController extends GetxController {
   String get errorMessage => _errorMessage.value;
 
   final _userFirebase = Rxn<User>();
+
+// SignIn with google 
+
+
+// SignOut 
 }
