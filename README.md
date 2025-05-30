@@ -9,7 +9,7 @@ Whether you're planning your weekly shopping or need last-minute ingredients, Gr
 
 - 🔍 **Browse and Search** – Easily browse categories or search for specific items.
 - 🛍️ **Smart Cart** – Add, remove, or update product quantities dynamically in your cart.
-- 🕒 **Scheduled Deliveries** – Choose your preferred delivery time slot.
+// - 🕒 **Scheduled Deliveries** – Choose your preferred delivery time slot.
 - 📍 **Real-Time Tracking** – Track your order from store to door.
 - 💳 **Secure Payments** – Multiple payment options including credit/debit card, mobile wallets, and cash on delivery.
 - ❤️ **Favorites & Order History** – Quickly reorder your most-used items.
