@@ -60,8 +60,6 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
-    final iconsize = screenWidth * .05;
-    final fontsize = screenWidth * .036;
 
     return Scaffold(
       appBar: AppBar(
@@ -74,8 +72,8 @@ class _HomeState extends State<Home> {
             padding: const EdgeInsets.only(right: 28.0),
             child: IconButton(
               onPressed: () => Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => CartScreen())),
-              icon: Icon(Icons.shopping_basket_outlined),
+                  context, MaterialPageRoute(builder: (_) => const CartScreen())),
+              icon: const Icon(Icons.shopping_basket_outlined),
             ),
           )
         ],
@@ -112,13 +110,13 @@ class _HomeState extends State<Home> {
                         },
                       ),
                     ),
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
                   ],
                 ),
               ),
             ),
 
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             // Categories
             SizedBox(
               height: screenHeight * 0.138,
@@ -154,12 +152,12 @@ class _HomeState extends State<Home> {
                         ),
                         child: Container(
                           width: screenWidth * .4,
-                          margin: EdgeInsets.only(right: 16),
+                          margin: const EdgeInsets.only(right: 16),
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(16),
                             boxShadow: [
-                              BoxShadow(color: Colors.white, blurRadius: 4)
+                              const BoxShadow(color: Colors.white, blurRadius: 4)
                             ],
                           ),
                           child: Column(
@@ -186,19 +184,19 @@ class _HomeState extends State<Home> {
                                       radius: 14,
                                       child: IconButton(
                                         onPressed: () {},
-                                        icon: Icon(
+                                        icon: const Icon(
                                           Icons.add_rounded,
                                           color: Colors.black,
                                           size: 25,
                                         ),
                                         padding: EdgeInsets.zero,
-                                        constraints: BoxConstraints(),
+                                        constraints: const BoxConstraints(),
                                       ),
                                     ),
                                   ),
                                 ],
                               ),
-                              SizedBox(height: 8),
+                              const SizedBox(height: 8),
                               Text(
                                 item['name'],
                                 style: GoogleFonts.inter(
@@ -207,12 +205,12 @@ class _HomeState extends State<Home> {
                                   letterSpacing: 0.0,
                                 ),
                               ),
-                              SizedBox(height: 4),
+                              const SizedBox(height: 4),
                               Row(
                                 children: [
-                                  Icon(Icons.star,
+                                  const Icon(Icons.star,
                                       size: 16, color: Colors.orange),
-                                  SizedBox(width: 4),
+                                  const SizedBox(width: 4),
                                   Text(
                                     "${item['rating']} (287)",
                                     style: GoogleFonts.inter(
@@ -223,7 +221,7 @@ class _HomeState extends State<Home> {
                                   ),
                                 ],
                               ),
-                              SizedBox(height: 8),
+                              const SizedBox(height: 8),
                               Text(
                                 "\$${item['price']}",
                                 style: GoogleFonts.inter(
