@@ -63,23 +63,7 @@ class _HomeState extends State<Home> {
 
     return Scaffold(
       appBar: AppBar(
-        // title: ListTile(
-        //   leading: Icon(Icons.bike_scooter),
-        //   title: Text(
-        //     "61 Hopper street..",
-        //     style: GoogleFonts.inter(
-        //       fontWeight: FontWeight.w500,
-        //       fontSize: fontsize,
-        //       height: 1,
-        //     ),
-        //   ),
-        //   trailing: Icon(
-        //     Icons.shopping_basket_outlined,
-        //     size: iconsize,
-        //   ),
-        // )
         leading: Icon(Icons.bike_scooter),
-
         title: Text(
           "61 Hopper street..",
         ),
@@ -141,36 +125,7 @@ class _HomeState extends State<Home> {
                   itemCount: categories.length,
                   itemBuilder: (context, index) {
                     final item = categories[index];
-                    return Padding(
-                      padding: const EdgeInsets.only(left: 8.0, right: 8),
-                      child: Column(
-                        children: [
-                          CircleAvatar(
-                            backgroundColor: Gcolour.lightgrey,
-                            radius: 32,
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Image.asset(
-                                item['image'],
-                                fit: BoxFit.cover,
-                                height: 40,
-                                width: 40,
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 8),
-                          Text(
-                            item['label'],
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.inter(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w500,
-                                letterSpacing: 0.0,
-                                height: 1),
-                          )
-                        ],
-                      ),
-                    );
+                    return GVerticalSection(item: item);
                   }),
             ),
 
