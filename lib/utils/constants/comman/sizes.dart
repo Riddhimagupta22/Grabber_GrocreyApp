@@ -18,7 +18,7 @@ class GSizes {
 
   // border radius
 
-  static const double searchBarBorder = 10;
+  static const double searchBarBorder = 16;
 
   // Default spacing between actions
   static const double defaultspace = 24;
