@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:grabber/Presentation/Cart/cart.dart';
 import 'package:grabber/Presentation/Home/wiget/gvertical_section.dart';
+import 'package:grabber/utils/constants/comman/sizes.dart';
 import '../../Coman/Widgets/bannerCard.dart';
 import '../../utils/constants/comman/colors.dart';
 import '../../utils/constants/comman/image.dart';
+import 'wiget/ghorizontal_section.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -63,8 +65,8 @@ class _HomeState extends State<Home> {
 
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.bike_scooter),
-        title: Text(
+        leading: const Icon(Icons.bike_scooter),
+        title: const Text(
           "61 Hopper street..",
         ),
         actions: [
@@ -119,7 +121,7 @@ class _HomeState extends State<Home> {
             SizedBox(height: 16),
             // Categories
             SizedBox(
-              height: screenHeight * 0.15,
+              height: screenHeight * 0.138,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: categories.length,
@@ -130,35 +132,10 @@ class _HomeState extends State<Home> {
             ),
 
             // Fruits Title Row
-            Padding(
+            const Padding(
               padding:
-                  const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Fruits",
-                    style: GoogleFonts.inter(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 16,
-                      letterSpacing: 0.0,
-                      height: 1,
-                    ),
-                  ),
-                  TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      'See all',
-                      style: GoogleFonts.inter(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 14,
-                        letterSpacing: 0.0,
-                        color: Gcolour.green,
-                      ),
-                    ),
-                  )
-                ],
-              ),
+                   EdgeInsets.symmetric(horizontal: GSizes.spaceBtw, vertical: GSizes.xs),
+              child: GHorizontalSection(text: 'Fruits',),
             ),
 
             Padding(
@@ -268,3 +245,4 @@ class _HomeState extends State<Home> {
     );
   }
 }
+

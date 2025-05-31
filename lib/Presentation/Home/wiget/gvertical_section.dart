@@ -33,7 +33,7 @@ class GVerticalSection extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Text(
             item['label'],
             textAlign: TextAlign.center,
