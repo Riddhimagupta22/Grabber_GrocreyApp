@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:grabber/Presentation/Cart/cart.dart';
-import 'package:grabber/utils/Helpers/helper.dart';
+import 'package:grabber/Presentation/Home/wiget/gvertical_section.dart';
 import '../../Coman/Widgets/bannerCard.dart';
 import '../../utils/constants/comman/colors.dart';
 import '../../utils/constants/comman/image.dart';
@@ -119,7 +119,7 @@ class _HomeState extends State<Home> {
             SizedBox(height: 16),
             // Categories
             SizedBox(
-              height: screenHeight * 0.12,
+              height: screenHeight * 0.15,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: categories.length,

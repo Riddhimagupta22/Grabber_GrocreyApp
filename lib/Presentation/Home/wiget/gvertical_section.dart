@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:grabber/utils/constants/comman/sizes.dart';
+
+import '../../../utils/constants/comman/colors.dart';
 
 
 class GVerticalSection extends StatelessWidget {
@@ -12,19 +16,20 @@ class GVerticalSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 8.0, right: 8),
+      padding: const EdgeInsets.all(GSizes.spaceBtw),
       child: Column(
         children: [
-          CircleAvatar(
-            backgroundColor: Gcolour.lightgrey,
-            radius: 32,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
+          Container(
+            padding: const EdgeInsets.all(GSizes.sm),
+            width: 66,
+            height: 66,
+            decoration: BoxDecoration(
+            color: Gcolour.lightgrey,
+            borderRadius: BorderRadius.circular(100)),
+            child: Center(
               child: Image.asset(
                 item['image'],
                 fit: BoxFit.cover,
-                height: 40,
-                width: 40,
               ),
             ),
           ),
@@ -32,12 +37,7 @@ class GVerticalSection extends StatelessWidget {
           Text(
             item['label'],
             textAlign: TextAlign.center,
-            style: GoogleFonts.inter(
-                fontSize: 12,
-                fontWeight: FontWeight.w500,
-                letterSpacing: 0.0,
-                height: 1),
-          )
+            style: Theme.of(context).textTheme.labelMedium,)
         ],
       ),
     );
