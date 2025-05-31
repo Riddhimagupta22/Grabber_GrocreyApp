@@ -4,6 +4,7 @@ class GSizes {
   // Padding
   static const double xxs = 4;
   static const double xs = 8;
+  static const double Sm = 10;
   static const double sm = 16;
   static const double md = 24;
 
@@ -14,6 +15,10 @@ class GSizes {
 
   // Appbar height
   static const double appbarHeight = 56;
+
+  // border radius
+
+  static const double searchBarBorder = 10;
 
   // Default spacing between actions
   static const double defaultspace = 24;

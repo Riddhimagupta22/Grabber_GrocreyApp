@@ -5,7 +5,7 @@ import '../../Presentation/Favourite/favourite.dart';
 import '../../Presentation/Home/homepage.dart';
 import '../../Presentation/menu.dart';
 import '../../Presentation/Screen/profile/profile.dart';
-import '../../Presentation/search.dart';
+import '../../Presentation/Search/search.dart';
 
 class NavBar extends StatefulWidget {
   const NavBar({super.key});
