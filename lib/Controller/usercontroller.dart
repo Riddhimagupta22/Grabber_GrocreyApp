@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class UserController extends GetxController {
-  final FirebaseFirestore _db = FirebaseFirestore.instance;
+  final FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -16,4 +16,9 @@ class UserController extends GetxController {
   String get errorMessage => _errorMessage.value;
 
   final _userFirebase = Rxn<User>();
+
+// SignIn with google 
+
+
+// SignOut 
 }
