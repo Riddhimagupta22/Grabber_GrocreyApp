@@ -3,31 +3,44 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import '../Model/cart.dart';
 
 class CartController extends GetxController {
+
   var cartItems = <String, Cart>{}.obs;
+
 
   void addToCart(String productId, Map<String, dynamic> productData) {
     if (cartItems.containsKey(productId)) {
-      cartItems[productId]!.quantity =
-          (cartItems[productId]!.quantity ?? 1) + 1;
+
+      final current = cartItems[productId];
+      cartItems[productId] = Cart(
+        product: current?.product,
+        quantity: (current?.quantity ?? 1) + 1,
+      );
     } else {
+
       cartItems[productId] = Cart(product: productData, quantity: 1);
     }
   }
+
 
   void removeFromCart(String productId) {
     cartItems.remove(productId);
   }
 
+
   void decreaseQuantity(String productId) {
     if (!cartItems.containsKey(productId)) return;
 
-    if ((cartItems[productId]!.quantity ?? 1) > 1) {
-      cartItems[productId]!.quantity =
-          (cartItems[productId]!.quantity ?? 1) - 1;
+    final currentQty = cartItems[productId]?.quantity ?? 1;
+    if (currentQty > 1) {
+      cartItems[productId] = Cart(
+        product: cartItems[productId]?.product,
+        quantity: currentQty - 1,
+      );
     } else {
       cartItems.remove(productId);
     }
   }
+
 
   void clearCart() {
     cartItems.clear();
@@ -37,14 +50,18 @@ class CartController extends GetxController {
   int get totalItems => cartItems.length;
 
 
-  int get totalQuantity =>
-      cartItems.values.fold(0, (sum, item) => sum + (item.quantity ?? 0));
+  int get totalQuantity {
+    return cartItems.values.fold(0, (sum, item) => sum + (item.quantity ?? 0));
+  }
 
 
-  double get totalPrice => cartItems.values.fold(0.0, (sum, item) {
-        final price = item.product?['price'] ?? 0.0;
-        return sum + (price * (item.quantity ?? 0));
-      });
+  double get totalPrice {
+    return cartItems.values.fold(0.0, (sum, item) {
+      final price = item.product?['price'] ?? 0.0;
+      final qty = item.quantity ?? 1;
+      return sum + (price * qty);
+    });
+  }
 
 
   Future<void> saveCartToFirestore(String userId) async {
@@ -65,10 +82,10 @@ class CartController extends GetxController {
 
   Future<void> loadCartFromFirestore(String userId) async {
     final doc =
-        await FirebaseFirestore.instance.collection('carts').doc(userId).get();
+    await FirebaseFirestore.instance.collection('carts').doc(userId).get();
 
-    if (doc.exists) {
-      final List<dynamic> items = doc.data()?['items'] ?? [];
+    if (doc.exists && doc.data() != null) {
+      final List<dynamic> items = doc.data()!['items'] ?? [];
 
       cartItems.clear();
       for (var item in items) {
