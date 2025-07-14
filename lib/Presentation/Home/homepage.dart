@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:grabber/Controller/cartcontroller.dart';
 import 'package:grabber/Presentation/Cart/cart.dart';
+import 'package:grabber/Presentation/Home/wiget/gvertical_cart.dart';
 import 'package:grabber/Presentation/Home/wiget/gvertical_section.dart';
 import 'package:grabber/utils/constants/comman/sizes.dart';
 import '../../Coman/Widgets/bannerCard.dart';
@@ -52,6 +56,7 @@ class _HomeState extends State<Home> {
       'textbutton': 'Shop Now',
     }
   ];
+  final _cartController = Get.put(CartController());
 
   final PageController _bannerController = PageController();
   int _currentBannerPage = 0;
@@ -71,8 +76,8 @@ class _HomeState extends State<Home> {
           Padding(
             padding: const EdgeInsets.only(right: 28.0),
             child: IconButton(
-              onPressed: () => Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => const CartScreen())),
+              onPressed: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (_) => const CartScreen())),
               icon: const Icon(Icons.shopping_basket_outlined),
             ),
           )
@@ -131,15 +136,17 @@ class _HomeState extends State<Home> {
 
             // Fruits Title Row
             const Padding(
-              padding:
-                   EdgeInsets.symmetric(horizontal: GSizes.spaceBtw, vertical: GSizes.xs),
-              child: GHorizontalSection(text: 'Fruits',),
+              padding: EdgeInsets.symmetric(
+                  horizontal: GSizes.spaceBtw, vertical: GSizes.xs),
+              child: GHorizontalSection(
+                text: 'Fruits',
+              ),
             ),
 
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 8.0),
               child: SizedBox(
-                height: screenHeight * 0.26,
+                height: screenHeight * 0.3,
                 child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: Fruits.length,
@@ -150,89 +157,8 @@ class _HomeState extends State<Home> {
                           left: 16.0,
                           right: 5,
                         ),
-                        child: Container(
-                          width: screenWidth * .4,
-                          margin: const EdgeInsets.only(right: 16),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(16),
-                            boxShadow: [
-                              const BoxShadow(color: Colors.white, blurRadius: 4)
-                            ],
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Stack(
-                                children: [
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(16),
-                                    child: Container(
-                                      color: Gcolour.lightgrey,
-                                      child: Image.asset(
-                                        item['image'],
-                                        height: screenHeight * 0.17,
-                                        width: double.infinity,
-                                      ),
-                                    ),
-                                  ),
-                                  Positioned(
-                                    bottom: 4,
-                                    right: 7,
-                                    child: CircleAvatar(
-                                      backgroundColor: Colors.white,
-                                      radius: 14,
-                                      child: IconButton(
-                                        onPressed: () {},
-                                        icon: const Icon(
-                                          Icons.add_rounded,
-                                          color: Colors.black,
-                                          size: 25,
-                                        ),
-                                        padding: EdgeInsets.zero,
-                                        constraints: const BoxConstraints(),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(height: 8),
-                              Text(
-                                item['name'],
-                                style: GoogleFonts.inter(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 14,
-                                  letterSpacing: 0.0,
-                                ),
-                              ),
-                              const SizedBox(height: 4),
-                              Row(
-                                children: [
-                                  const Icon(Icons.star,
-                                      size: 16, color: Colors.orange),
-                                  const SizedBox(width: 4),
-                                  Text(
-                                    "${item['rating']} (287)",
-                                    style: GoogleFonts.inter(
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 14,
-                                      letterSpacing: 0.0,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(height: 8),
-                              Text(
-                                "\$${item['price']}",
-                                style: GoogleFonts.inter(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 14,
-                                  letterSpacing: 0.0,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+                        child: GVerticalCart(
+                            item: item, cartController: _cartController),
                       );
                     }),
               ),
@@ -243,4 +169,3 @@ class _HomeState extends State<Home> {
     );
   }
 }
-

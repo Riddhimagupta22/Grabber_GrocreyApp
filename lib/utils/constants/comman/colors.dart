@@ -11,6 +11,7 @@ class Gcolour {
   static const Color green = Color(0xFF0CA201);
 
   static const Color black = Colors.black;
+  static const Color darkGrey = Color(0xFF2C2C2C);
   static const Color white = Colors.white;
 
   // profileDark

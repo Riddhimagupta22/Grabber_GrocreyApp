@@ -15,7 +15,7 @@ class GVerticalSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(GSizes.spaceBtw),
+      padding: const EdgeInsets.only(left:GSizes.spaceBtw,right: GSizes.spaceBtw, top: GSizes.spaceBtw),
       child: Column(
         children: [
           Container(

@@ -9,16 +9,20 @@ class CartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: GAppbar(
-          title: Text(
-            'Cart',
-            style: Theme.of(context).textTheme.headlineSmall,
-          ),
-          showBackArrow: false),
+        showBackArrow: true,
+        title: Text(
+          'Cart',
+          style: Theme.of(context).textTheme.headlineSmall,
+        ),
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(GSizes.defaultspace),
           child: ListView.separated(
-              itemBuilder: (_, index) => const Column(),
+              shrinkWrap: true,
+              itemBuilder: (_, index) => const Column(
+                    children: [Row()],
+                  ),
               separatorBuilder: (_, __) => const SizedBox(
                     height: GSizes.spacebtwsections,
                   ),
