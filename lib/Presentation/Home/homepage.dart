@@ -1,85 +1,79 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:grabber/Controller/cartcontroller.dart';
 import 'package:grabber/Presentation/Cart/cart.dart';
-import 'package:grabber/Presentation/Home/wiget/gvertical_cart.dart';
-import 'package:grabber/Presentation/Home/wiget/gvertical_section.dart';
 import 'package:grabber/utils/constants/comman/sizes.dart';
-import '../../Coman/Widgets/bannerCard.dart';
-import '../../utils/constants/comman/colors.dart';
-import '../../utils/constants/comman/image.dart';
+import 'package:grabber/utils/constants/comman/colors.dart';
+import 'package:grabber/utils/constants/comman/image.dart';
+import 'package:grabber/Coman/Widgets/bannerCard.dart';
+
 import 'wiget/ghorizontal_section.dart';
+import 'wiget/gvertical_cart.dart';
+import 'wiget/gvertical_section.dart';
 
 class Home extends StatefulWidget {
+  const Home({super.key});
+
   @override
   State<Home> createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
-  final List<Map<String, dynamic>> categories = [
+  final cartController = Get.put(CartController());
+
+  final categories = [
     {'image': GImage.Fruits, 'label': 'Fruits'},
-    {'image': GImage.Milkegg, 'label': 'Milk & egg'},
+    {'image': GImage.Milkegg, 'label': 'Milk & Egg'},
     {'image': GImage.Beverages, 'label': 'Beverages'},
     {'image': GImage.Laundry, 'label': 'Laundry'},
     {'image': GImage.Vegetables, 'label': 'Vegetables'},
   ];
 
-  final List<Map<String, dynamic>> Fruits = [
+  final fruits = [
     {'image': GImage.Banana, 'name': 'Banana', 'rating': 4.8, 'price': 3.99},
     {'image': GImage.Apple, 'name': 'Apple', 'rating': 4.7, 'price': 2.99},
     {'image': GImage.Orange, 'name': 'Orange', 'rating': 4.6, 'price': 3.95},
   ];
 
-  // promo
-  final List<Map<String, dynamic>> Banner = [
+  final List<Map<String, dynamic>> banners = [
     {
       'color': Gcolour.lightgreen,
-      'title': 'Up to 30% offer',
+      'title': 'Up to 30% Offer',
       'subtitle': 'Enjoy our big offer',
       'image': GImage.Banner1,
       'textbutton': 'Shop Now',
     },
     {
       'color': Gcolour.red,
-      'title': 'Up to 25% offer',
+      'title': 'Up to 25% Offer',
       'subtitle': 'On first buyers',
       'image': GImage.Banner2,
       'textbutton': 'Shop Now',
     },
     {
       'color': Gcolour.yellow,
-      'title': 'Get Same day\nDeliver',
+      'title': 'Same Day Delivery',
       'subtitle': 'On orders above \$20',
       'image': GImage.Banner3,
       'textbutton': 'Shop Now',
     }
   ];
-  final _cartController = Get.put(CartController());
 
-  final PageController _bannerController = PageController();
+  final PageController _bannerController = PageController(viewportFraction: 0.92);
   int _currentBannerPage = 0;
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
       appBar: AppBar(
         leading: const Icon(Icons.bike_scooter),
-        title: const Text(
-          "61 Hopper street..",
-        ),
+        title: const Text("61 Hopper Street"),
         actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 28.0),
-            child: IconButton(
-              onPressed: () => Navigator.push(context,
-                  MaterialPageRoute(builder: (_) => const CartScreen())),
-              icon: const Icon(Icons.shopping_basket_outlined),
-            ),
+          IconButton(
+            onPressed: () => Get.to(() => const CartScreen()),
+            icon: const Icon(Icons.shopping_basket_outlined),
           )
         ],
       ),
@@ -87,80 +81,67 @@ class _HomeState extends State<Home> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Banner
+            // Banner Carousel
             Padding(
               padding: const EdgeInsets.only(top: 15.0),
               child: SizedBox(
                 height: 222,
-                child: Column(
-                  children: [
-                    Expanded(
-                      child: PageView.builder(
-                        controller: PageController(viewportFraction: 0.92),
-                        itemCount: Banner.length,
-                        onPageChanged: (index) {
-                          setState(() {
-                            _currentBannerPage = index;
-                          });
-                        },
-                        itemBuilder: (context, index) {
-                          final item = Banner[index];
-                          return Bannercard(
-                            color: item['color'],
-                            title: item['title'],
-                            subtitle: item['subtitle'],
-                            image: item['image'],
-                            textbutton: item['textbutton'],
-                          );
-                        },
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-                  ],
+                child: PageView.builder(
+                  controller: _bannerController,
+                  itemCount: banners.length,
+                  onPageChanged: (index) {
+                    setState(() => _currentBannerPage = index);
+                  },
+                  itemBuilder: (context, index) {
+                    final item = banners[index];
+                    return Bannercard(
+                      color: item['color'],
+                      title: item['title'],
+                      subtitle: item['subtitle'],
+                      image: item['image'],
+                      textbutton: item['textbutton'],
+                    );
+                  },
                 ),
               ),
             ),
 
-            const SizedBox(height: 16),
-            // Categories
+            const SizedBox(height: GSizes.spacebtwsections),
+
+            // Category Section
             SizedBox(
               height: screenHeight * 0.138,
               child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: categories.length,
-                  itemBuilder: (context, index) {
-                    final item = categories[index];
-                    return GVerticalSection(item: item);
-                  }),
-            ),
-
-            // Fruits Title Row
-            const Padding(
-              padding: EdgeInsets.symmetric(
-                  horizontal: GSizes.spaceBtw, vertical: GSizes.xs),
-              child: GHorizontalSection(
-                text: 'Fruits',
+                scrollDirection: Axis.horizontal,
+                itemCount: categories.length,
+                itemBuilder: (context, index) {
+                  return GVerticalSection(item: categories[index]);
+                },
               ),
             ),
 
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
-              child: SizedBox(
-                height: screenHeight * 0.3,
-                child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: Fruits.length,
-                    itemBuilder: (context, index) {
-                      final item = Fruits[index];
-                      return Padding(
-                        padding: const EdgeInsets.only(
-                          left: 16.0,
-                          right: 5,
-                        ),
-                        child: GVerticalCart(
-                            item: item, cartController: _cartController),
-                      );
-                    }),
+
+            const Padding(
+              padding: EdgeInsets.symmetric(
+                  horizontal: GSizes.spaceBtw, vertical: GSizes.xs),
+              child: GHorizontalSection(text: 'Fruits'),
+            ),
+            const SizedBox(height: GSizes.xs),
+
+            SizedBox(
+              height: screenHeight * 0.31,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: fruits.length,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.only(right: GSizes.spaceBtw,left: 15),
+                    child: GVerticalCart(
+                      item: fruits[index],
+                      cartController: cartController,
+                    ),
+                  );
+                },
               ),
             ),
           ],

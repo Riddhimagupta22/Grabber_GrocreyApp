@@ -20,4 +20,6 @@ class Gcolour {
   //ProfileLight
   static const Color CBG = Color(0xFFF1F2F6);
   static const Color iconcolor2 = Color(0xFFB4B4BA);
+
+  static const Color borderColor = Color(0xFFF0EFEF);
 }
