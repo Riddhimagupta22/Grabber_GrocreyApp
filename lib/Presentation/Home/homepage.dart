@@ -7,6 +7,8 @@ import 'package:grabber/utils/constants/comman/colors.dart';
 import 'package:grabber/utils/constants/comman/image.dart';
 import 'package:grabber/Coman/Widgets/bannerCard.dart';
 
+import '../../Controller/loaction_controller.dart';
+import '../../utils/Helpers/location_helper.dart';
 import 'wiget/ghorizontal_section.dart';
 import 'wiget/gvertical_cart.dart';
 import 'wiget/gvertical_section.dart';
@@ -59,6 +61,10 @@ class _HomeState extends State<Home> {
     }
   ];
 
+  String? _currentAddress;
+
+
+
   final PageController _bannerController = PageController(viewportFraction: 0.92);
   int _currentBannerPage = 0;
 
@@ -69,8 +75,13 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         leading: const Icon(Icons.bike_scooter),
-        title: const Text("61 Hopper Street"),
-        actions: [
+         title:
+         Obx(() => Text('',
+           // locationController.location.value,
+           overflow: TextOverflow.ellipsis,
+           style: Theme.of(context).textTheme.bodyLarge,)),
+
+      actions: [
           IconButton(
             onPressed: () => Get.to(() => const CartScreen()),
             icon: const Icon(Icons.shopping_basket_outlined),
@@ -81,7 +92,7 @@ class _HomeState extends State<Home> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Banner Carousel
+
             Padding(
               padding: const EdgeInsets.only(top: 15.0),
               child: SizedBox(
@@ -108,7 +119,7 @@ class _HomeState extends State<Home> {
 
             const SizedBox(height: GSizes.spacebtwsections),
 
-            // Category Section
+
             SizedBox(
               height: screenHeight * 0.138,
               child: ListView.builder(
