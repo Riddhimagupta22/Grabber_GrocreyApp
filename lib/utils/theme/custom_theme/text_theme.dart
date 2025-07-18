@@ -100,7 +100,7 @@ class GTextTheme {
       color: Colors.white,
     ),
     bodyLarge: GoogleFonts.inter(
-      fontSize: GSizes.fontSizeSm,
+      fontSize: GSizes.fontSizeMd,
       fontWeight: FontWeight.w600,
       color: Colors.white70,
     ),

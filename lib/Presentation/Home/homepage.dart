@@ -6,9 +6,7 @@ import 'package:grabber/utils/constants/comman/sizes.dart';
 import 'package:grabber/utils/constants/comman/colors.dart';
 import 'package:grabber/utils/constants/comman/image.dart';
 import 'package:grabber/Coman/Widgets/bannerCard.dart';
-
 import '../../Controller/loaction_controller.dart';
-import '../../utils/Helpers/location_helper.dart';
 import 'wiget/ghorizontal_section.dart';
 import 'wiget/gvertical_cart.dart';
 import 'wiget/gvertical_section.dart';
@@ -21,6 +19,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final locationController = Get.put(LocationController());
   final cartController = Get.put(CartController());
 
   final categories = [
@@ -61,8 +60,6 @@ class _HomeState extends State<Home> {
     }
   ];
 
-  String? _currentAddress;
-
 
 
   final PageController _bannerController = PageController(viewportFraction: 0.92);
@@ -76,12 +73,14 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         leading: const Icon(Icons.bike_scooter),
          title:
-         Obx(() => Text('',
-           // locationController.location.value,
+         Obx(() => Text(
+           locationController.location.value,
            overflow: TextOverflow.ellipsis,
-           style: Theme.of(context).textTheme.bodyLarge,)),
+           style: Theme.of(context).textTheme.bodyLarge,
+         )),
 
-      actions: [
+
+          actions: [
           IconButton(
             onPressed: () => Get.to(() => const CartScreen()),
             icon: const Icon(Icons.shopping_basket_outlined),
