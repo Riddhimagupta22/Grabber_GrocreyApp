@@ -71,6 +71,7 @@ class _HomeState extends State<Home> {
 
     return Scaffold(
       appBar: AppBar(
+
         leading: const Icon(Icons.bike_scooter),
          title:
          Obx(() => Text(
