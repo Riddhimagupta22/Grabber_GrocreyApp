@@ -17,7 +17,7 @@ class Profile extends StatelessWidget {
           title: Text(
             'Profile',
           ),
-          showBackArrow: false),
+          showBackArrow: false, centerTitle: false,),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(GSizes.defaultspace),

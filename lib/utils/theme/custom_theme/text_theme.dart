@@ -91,12 +91,12 @@ class GTextTheme {
     ),
     titleMedium: GoogleFonts.inter(
       fontSize: GSizes.fontSizeMd,
-      fontWeight: FontWeight.w600,
+      fontWeight: FontWeight.w500,
       color: Colors.white,
     ),
     titleSmall: GoogleFonts.inter(
       fontSize: GSizes.fontSizeMd,
-      fontWeight: FontWeight.w600,
+      fontWeight: FontWeight.w400,
       color: Colors.white,
     ),
     bodyLarge: GoogleFonts.inter(

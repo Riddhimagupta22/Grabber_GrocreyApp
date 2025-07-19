@@ -60,9 +60,8 @@ class _HomeState extends State<Home> {
     }
   ];
 
-
-
-  final PageController _bannerController = PageController(viewportFraction: 0.92);
+  final PageController _bannerController =
+      PageController(viewportFraction: 0.92);
   int _currentBannerPage = 0;
 
   @override
@@ -71,17 +70,13 @@ class _HomeState extends State<Home> {
 
     return Scaffold(
       appBar: AppBar(
-
         leading: const Icon(Icons.bike_scooter),
-         title:
-         Obx(() => Text(
-           locationController.location.value,
-           overflow: TextOverflow.ellipsis,
-           style: Theme.of(context).textTheme.bodyLarge,
-         )),
-
-
-          actions: [
+        title: Obx(() => Text(
+              locationController.location.value,
+              overflow: TextOverflow.ellipsis,
+              style: Theme.of(context).textTheme.bodyLarge,
+            )),
+        actions: [
           IconButton(
             onPressed: () => Get.to(() => const CartScreen()),
             icon: const Icon(Icons.shopping_basket_outlined),
@@ -92,7 +87,6 @@ class _HomeState extends State<Home> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
             Padding(
               padding: const EdgeInsets.only(top: 15.0),
               child: SizedBox(
@@ -116,10 +110,7 @@ class _HomeState extends State<Home> {
                 ),
               ),
             ),
-
             const SizedBox(height: GSizes.spacebtwsections),
-
-
             SizedBox(
               height: screenHeight * 0.138,
               child: ListView.builder(
@@ -130,15 +121,12 @@ class _HomeState extends State<Home> {
                 },
               ),
             ),
-
-
             const Padding(
               padding: EdgeInsets.symmetric(
                   horizontal: GSizes.spaceBtw, vertical: GSizes.xs),
               child: GHorizontalSection(text: 'Fruits'),
             ),
             const SizedBox(height: GSizes.xs),
-
             SizedBox(
               height: screenHeight * 0.31,
               child: ListView.builder(
@@ -146,7 +134,8 @@ class _HomeState extends State<Home> {
                 itemCount: fruits.length,
                 itemBuilder: (context, index) {
                   return Padding(
-                    padding: const EdgeInsets.only(right: GSizes.spaceBtw,left: 15),
+                    padding:
+                        const EdgeInsets.only(right: GSizes.spaceBtw, left: 15),
                     child: GVerticalCart(
                       item: fruits[index],
                       cartController: cartController,

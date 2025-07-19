@@ -7,15 +7,13 @@ import 'package:grabber/utils/device/device_avail.dart';
 
 class GSearchBar extends StatelessWidget {
   final bool showbg, showBorder;
-  SearchController _searchController = Get.put(SearchController());
-  GSearchBar({Key? key, required this.showbg, required this.showBorder})
-      : super(key: key);
+  const GSearchBar({super.key, required this.showbg, required this.showBorder});
 
   @override
   Widget build(BuildContext context) {
     final dark = GHelperFunction.isDarkMode(context);
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: GSizes.defaultspace),
+      padding: const EdgeInsets.symmetric(horizontal: GSizes.defaultspace, vertical: GSizes.sm),
       child: Container(
         padding: EdgeInsets.all(GSizes.sm),
         width: GDeviceAvail.getScreenWidth(context),
@@ -33,7 +31,7 @@ class GSearchBar extends StatelessWidget {
           decoration: InputDecoration(
               border: InputBorder.none,
               hintText: "Search",
-              hintStyle: Theme.of(context).textTheme.bodySmall,
+              labelStyle: Theme.of(context).textTheme.bodyLarge,
               prefixIcon: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: GSizes.sm),
                 child: Icon(Icons.search),

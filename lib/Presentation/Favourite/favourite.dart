@@ -9,6 +9,7 @@ class Favourite extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: GAppbar(
+        centerTitle: false,
         title: Text(
           "Favourite",
           style: Theme.of(context).textTheme.headlineMedium,

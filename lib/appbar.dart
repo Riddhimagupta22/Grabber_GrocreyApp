@@ -11,9 +11,10 @@ class GAppbar extends StatelessWidget implements PreferredSizeWidget {
       required this.showBackArrow,
       this.leadingIcon,
       this.actions,
-      this.leadingOnPresses});
+      this.leadingOnPresses, required this.centerTitle});
 
   final Widget title;
+  final bool centerTitle;
   final bool showBackArrow;
   final IconData? leadingIcon;
   final List<Widget>? actions;
@@ -25,6 +26,7 @@ class GAppbar extends StatelessWidget implements PreferredSizeWidget {
     return Padding(
         padding: const EdgeInsets.all(8.0),
         child: AppBar(
+          centerTitle: false ,
           automaticallyImplyLeading: false,
           leading: showBackArrow
               ? IconButton(
