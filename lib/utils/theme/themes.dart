@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grabber/utils/theme/custom_theme/text_theme.dart';
 
+import '../constants/comman/colors.dart';
 import 'custom_theme/appbartheme.dart';
 
 class GAppTheme {
@@ -13,6 +14,11 @@ class GAppTheme {
     primaryColor: const Color(0XFF0CA201),
     appBarTheme: GAppBarTheme.lightappBarTheme,
     useMaterial3: true,
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Gcolour.green,
+      ),
+    ),
   );
   static ThemeData darkTheme = ThemeData(
     scaffoldBackgroundColor: const Color(0xFF000000),

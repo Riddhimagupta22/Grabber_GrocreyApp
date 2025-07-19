@@ -3,8 +3,9 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:grabber/appbar.dart';
 import 'package:grabber/utils/constants/comman/sizes.dart';
-import '../../Controller/cartcontroller.dart';
-import '../../utils/constants/comman/colors.dart';
+import '../../../Controller/cartcontroller.dart';
+import '../../../utils/constants/comman/colors.dart';
+import '../Checkout/check_out.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
@@ -147,7 +148,7 @@ class CartScreen extends StatelessWidget {
                     );
                   },
                 ),
-                const SizedBox(height: GSizes.spacebtwsections * 2),
+                const SizedBox(height: GSizes.spacebtwsections),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
@@ -174,6 +175,7 @@ class CartScreen extends StatelessWidget {
                           ),
                         ),
                         onPressed: () {
+                          Get.to(CheckOut);
 
                         },
                         child: Text(
@@ -186,6 +188,7 @@ class CartScreen extends StatelessWidget {
                         ),
                       ),
                     )
+
                   ],
                 ),
               ],
