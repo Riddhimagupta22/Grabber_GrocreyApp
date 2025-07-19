@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:grabber/Presentation/Order/Cart/widget/custom_con.dart';
 import 'package:grabber/appbar.dart';
 import 'package:grabber/utils/constants/comman/sizes.dart';
 import '../../../Controller/cartcontroller.dart';
@@ -149,47 +150,31 @@ class CartScreen extends StatelessWidget {
                   },
                 ),
                 const SizedBox(height: GSizes.spacebtwsections),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Text("Total:",
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.bold)),
-                        Text("₹${cartController.totalPrice.toStringAsFixed(2)}",
-                            style: const TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.bold)),
-                      ],
-                    ),
-                    const SizedBox(height: GSizes.spacebtwsections),
-                    SizedBox(
-                      height: 50,
-                      width: double.infinity,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Gcolour.green,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                        onPressed: () {
-                          Get.to(CheckOut);
-
-                        },
-                        child: Text(
-                          "Go to checkout",
-                          style: GoogleFonts.inter(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 18,
-                              letterSpacing: -0.5,
-                              color: Gcolour.white),
-                        ),
+                custom_c(cartController: cartController),
+                const SizedBox(height: GSizes.spacebtwsections),
+                SizedBox(
+                  height: 50,
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Gcolour.green,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
                       ),
-                    )
+                    ),
+                    onPressed: () {
+                      Get.to(CheckOut());
 
-                  ],
+                    },
+                    child: Text(
+                      "Go to checkout",
+                      style: GoogleFonts.inter(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 18,
+                          letterSpacing: -0.5,
+                          color: Gcolour.white),
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -199,3 +184,5 @@ class CartScreen extends StatelessWidget {
     );
   }
 }
+
+

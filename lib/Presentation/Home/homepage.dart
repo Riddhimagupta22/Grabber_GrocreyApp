@@ -111,7 +111,7 @@ class _HomeState extends State<Home> {
                 ),
               ),
             ),
-            const SizedBox(height: GSizes.spacebtwsections),
+            const SizedBox(height: GSizes.Sm),
             SizedBox(
               height: screenHeight * 0.138,
               child: ListView.builder(
