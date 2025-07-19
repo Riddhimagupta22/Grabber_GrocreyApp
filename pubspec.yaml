@@ -13,12 +13,19 @@ dependencies:
   flutter:
     sdk: flutter
 
+#icons
   cupertino_icons: ^1.0.8
+  lottie: ^3.0.0
+
+#text
+  google_fonts: ^6.2.1
+
+# time
+  intl: ^0.20.2
+
+#State Management
   get: ^4.6.6
   http: ^1.2.2
-  intl: ^0.20.2
-  google_fonts: ^6.2.1
-  lottie: ^3.0.0
 
 #firebase
   firebase_core: ^3.10.0
@@ -31,6 +38,9 @@ dependencies:
 # location
   geolocator: ^14.0.2
   geocoding: ^4.0.0
+
+# payment
+  flutter_stripe: ^11.5.0
 
 
 
